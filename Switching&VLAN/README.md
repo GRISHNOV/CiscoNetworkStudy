@@ -3,7 +3,7 @@
 Create VLAN
 
 ```
-Switch0(config)#vlan X
+Switch0(config)#vlan X // recommend entering it even if it was created automatically
 Switch0(config-vlan)#name ######
 ```
 
@@ -33,4 +33,14 @@ For managment
 Switch0(config)#interface vlan X
 Switch0(config-if)#description ######
 Switch0(config-if)#ip address XXX.XXX.XXX.XXX YYY.YYY.YYY.YYY
+```
+
+Vlan termination
+
+```
+Router0(config)#interface fastEthernet @/@
+Router0(config-if)#no shutdown
+Router0(config)#interface fa@/@.# // sub-interface
+Router0(config-if)#encapsulation dot1Q #
+Router0(config-if)#ip address XXX.XXX.XXX.XXX YYY.YYY.YYY.YYY
 ```
